@@ -1,0 +1,26 @@
+{
+  "name": "boilerplate-selenium-webdriver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:test": "npx cucumber-js --config src/config/cucumber.js",
+    "open:report:html": "node src/config/createReport.js",
+    "start:test:report": "npm run start:test && npm run open:report:html",
+    "lint": "eslint .",
+    "format": "prettier --write 'src/**/*.ts'"
+  },
+  "author": "Sandra Jaimes",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^9.1.2",
+    "chromedriver": "^113.0.0",
+    "dotenv": "^16.0.3",
+    "moment": "^2.29.4",
+    "selenium-webdriver": "4.9.2"
+  },
+  "devDependencies": {
+    "cucumber-html-reporter": "^7.1.0",
+    "prettier": "^2.8.8"
+  }
+}
