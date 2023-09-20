@@ -15,11 +15,11 @@
             "line": 4,
             "name": "If I open the page in the product list - US_01",
             "match": {
-              "location": "src/features/list_of_products/support/steps/US_01.js:18"
+              "location": "dist/features/list_of_products/support/steps/US_01.js:19"
             },
             "result": {
               "status": "passed",
-              "duration": 3610446879
+              "duration": 3593805765
             }
           },
           {
@@ -28,11 +28,11 @@
             "line": 5,
             "name": "I can see a list of products",
             "match": {
-              "location": "src/features/list_of_products/support/steps/US_01.js:29"
+              "location": "dist/features/list_of_products/support/steps/US_01.js:32"
             },
             "result": {
               "status": "passed",
-              "duration": 844463644
+              "duration": 655891148
             }
           },
           {
@@ -41,11 +41,11 @@
             "line": 6,
             "name": "I can get: Title, price and description",
             "match": {
-              "location": "src/features/list_of_products/support/steps/US_01.js:39"
+              "location": "dist/features/list_of_products/support/steps/US_01.js:44"
             },
             "result": {
               "status": "passed",
-              "duration": 235998407
+              "duration": 236656949
             }
           }
         ],
@@ -58,7 +58,7 @@
     "keyword": "Feature",
     "name": "US_01 - As a user I want to be able to view a list of products",
     "tags": [],
-    "uri": "src/features/US_01.feature"
+    "uri": "dist/features/US_01.feature"
   },
   {
     "description": "",
@@ -76,11 +76,11 @@
             "line": 4,
             "name": "If I open the page in the product list - US_02",
             "match": {
-              "location": "src/features/list_of_products/support/steps/US_02.js:22"
+              "location": "dist/features/list_of_products/support/steps/US_02.js:22"
             },
             "result": {
               "status": "passed",
-              "duration": 4295991945
+              "duration": 4315795405
             }
           },
           {
@@ -89,11 +89,11 @@
             "line": 5,
             "name": "When you selected the Phones option",
             "match": {
-              "location": "src/features/list_of_products/support/steps/US_02.js:36"
+              "location": "dist/features/list_of_products/support/steps/US_02.js:37"
             },
             "result": {
               "status": "passed",
-              "duration": 12209835
+              "duration": 27855066
             }
           },
           {
@@ -102,11 +102,11 @@
             "line": 6,
             "name": "Only products corresponding to: Phones are visible",
             "match": {
-              "location": "src/features/list_of_products/support/steps/US_02.js:47"
+              "location": "dist/features/list_of_products/support/steps/US_02.js:46"
             },
             "result": {
               "status": "passed",
-              "duration": 280419697
+              "duration": 476213185
             }
           }
         ],
@@ -119,6 +119,6 @@
     "keyword": "Feature",
     "name": "US_02 - As a user I want to be able to filter my products",
     "tags": [],
-    "uri": "src/features/US_02.feature"
+    "uri": "dist/features/US_02.feature"
   }
 ]
