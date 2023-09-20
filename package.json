@@ -10,7 +10,7 @@
     "open:report:html": "node dist/config/createReport.js",
     "start:test:report": "npm run start:test && npm run open:report:html",
     "lint": "eslint .",
-    "format": "prettier --write 'xxxsrc_2/**/*.ts'"
+    "format": "prettier --write 'src/**/*.ts'"
   },
   "author": "Sandra Jaimes",
   "license": "ISC",

@@ -1,11 +1,11 @@
-import {createChromeDriver} from "./chrome"
-import {ThenableWebDriver, WebDriver} from "selenium-webdriver";
+import { createChromeDriver } from './chrome';
+import { ThenableWebDriver, WebDriver } from 'selenium-webdriver';
 
-export async function start(defineDrive: string): Promise<WebDriver> {
+export async function start(defineBrowser: string): Promise<WebDriver> {
   const allDriver: Record<string, ThenableWebDriver> = {
-  chrome: createChromeDriver()
-};
+    chrome: createChromeDriver(),
+    default: createChromeDriver(),
+  };
 
-return allDriver[`${defineDrive}`] || allDriver['chrome'];
+  return allDriver[`${defineBrowser}`] || allDriver['default'];
 }
-

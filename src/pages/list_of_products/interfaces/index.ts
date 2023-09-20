@@ -1,19 +1,19 @@
-import {WebElement} from "selenium-webdriver";
+import { WebElement } from 'selenium-webdriver';
 
 export interface ProductList {
-    listOfProducts: WebElement[];
+  listOfProducts: WebElement[];
 }
 
 export interface DetailsOfProductByPosition {
-    titleOfProduct: string;
-    priceOfProduct: string;
-    descriptionOfProduct: string;
+  titleOfProduct: string;
+  priceOfProduct: string;
+  descriptionOfProduct: string;
 }
 
 export interface CategoryList {
-    listOfCategories: WebElement[];
+  listOfCategories: WebElement[];
 }
 
 export interface ClickElementCategoryByPosition {
-    successful: boolean;
+  successful: boolean;
 }
