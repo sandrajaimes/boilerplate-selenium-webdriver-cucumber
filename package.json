@@ -4,11 +4,11 @@
   "description": "",
   "main": "dist/config/cucumber.js",
   "scripts": {
-    "start:tsc": "rm -rf dist && tsc",
-    "cp:features": "sh src/cpFeatures.sh",
     "start:test": "npm run start:tsc && npm run cp:features && npx cucumber-js --config src/config/cucumber.ts",
     "open:report:html": "node dist/config/createReport.js",
     "start:test:report": "npm run start:test && npm run open:report:html",
+    "start:tsc": "rm -rf dist && tsc",
+    "cp:features": "sh src/cpFeatures.sh",
     "lint": "eslint .",
     "format": "prettier --write 'src/**/*.ts'"
   },
