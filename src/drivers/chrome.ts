@@ -1,7 +1,7 @@
 import { Builder } from 'selenium-webdriver';
 import { Options } from 'selenium-webdriver/chrome';
 
-export function createChromeDriver() {
+export const CreateChromeDriver = function () {
   try {
     const options = new Options();
     options.addArguments(`${process.env.DEFINE_BROWSER}`);
@@ -11,4 +11,8 @@ export function createChromeDriver() {
     console.log('Driver creation failed', e);
     throw new Error('It was not possible to create the driver instance');
   }
+}
+
+module.exports ={
+  CreateChromeDriver
 }

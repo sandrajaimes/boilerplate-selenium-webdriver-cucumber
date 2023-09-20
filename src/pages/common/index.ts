@@ -1,7 +1,7 @@
 import { WebDriver } from 'selenium-webdriver';
 require('dotenv').config();
 
-import { start } from '../../drivers/index';
+import { DefineBrowserByString } from '../../drivers';
 import {
   TCloseWebFunction,
   TOpenWebFunction,
@@ -17,7 +17,7 @@ export const StartDriver: TStartDriverFunction = async function StartDriver(
       new Error('The driver must be defined');
     }
 
-    return await start(defineBrowser);
+    return await DefineBrowserByString(defineBrowser);
   } catch (e) {
     console.log('It was not possible to create the driver instance: ', e);
     throw new Error('It was not possible to create the driver instance');
