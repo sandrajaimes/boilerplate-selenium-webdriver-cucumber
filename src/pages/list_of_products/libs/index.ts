@@ -1,10 +1,10 @@
 /*libs*/
-export function includePosition(element: string, position: number): string {
+export const IncludePosition: any = function (element: string, position: number): string {
   const separateTheString = element.split('::');
   return `${separateTheString[0]}[${position}]${separateTheString[1]}`;
 }
 
-export function validationsToPosition(position: number): Error | boolean {
+export const ValidationsToPosition: any =function (position: number): Error | boolean {
   if (!position) {
     throw new Error('The position of element must be a indicated');
   }
@@ -16,11 +16,11 @@ export function validationsToPosition(position: number): Error | boolean {
   return true;
 }
 
-export function validationsToArrayFromPosition(
+export const ValidationsToArrayFromPosition: any = function (
   position: number,
   elements: any[]
 ): Error | boolean {
-  validationsToPosition(position);
+  ValidationsToPosition(position);
 
   if (position > elements.length) {
     throw new Error('The position is not correct');
@@ -29,8 +29,8 @@ export function validationsToArrayFromPosition(
   return true;
 }
 
-export default {
-  includePosition,
-  validationsToPosition,
-  validationsToArrayFromPosition,
-};
+module.exports ={
+  IncludePosition,
+  ValidationsToPosition,
+  ValidationsToArrayFromPosition
+}

@@ -1,6 +1,6 @@
 import { By, WebDriver, WebElement } from 'selenium-webdriver';
 
-import libsAll from './libs/index';
+import {ValidationsToPosition, IncludePosition, ValidationsToArrayFromPosition} from './libs';
 import {
   TClickElementOfCategoriesByPositionFunction,
   TGetDetailsOfProductByPositionFunction,
@@ -30,19 +30,19 @@ export const GetListOfProducts: TGetListOfProductsFunction = async function (
 
 export const GetDetailsOfProductByPosition: TGetDetailsOfProductByPositionFunction =
   async function (driver: WebDriver, position: number) {
-    libsAll.validationsToPosition(position);
+    ValidationsToPosition(position);
 
     const findTitleProductByPosition: WebElement[] = await driver.findElements(
-      By.xpath(libsAll.includePosition(titleProduct, position))
+      By.xpath(IncludePosition(titleProduct, position))
     );
 
     const findPriceProductByPosition: WebElement[] = await driver.findElements(
-      By.xpath(libsAll.includePosition(priceProduct, position))
+      By.xpath(IncludePosition(priceProduct, position))
     );
 
     const findDescriptionProductByPosition: WebElement[] =
       await driver.findElements(
-        By.xpath(libsAll.includePosition(descriptionProduct, position))
+        By.xpath(IncludePosition(descriptionProduct, position))
       );
 
     return {
@@ -67,7 +67,7 @@ export const ClickElementOfCategoriesByPosition: TClickElementOfCategoriesByPosi
   async function (driver: WebDriver, position: number) {
     const { listOfCategories } = await GetListOfCategories(driver);
 
-    libsAll.validationsToArrayFromPosition(position, listOfCategories);
+    ValidationsToArrayFromPosition(position, listOfCategories);
 
     const onlyElement: any[] = listOfCategories.filter(
       (value: any, index: any) => index === position
