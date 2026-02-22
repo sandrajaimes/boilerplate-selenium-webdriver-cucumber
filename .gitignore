@@ -1,3 +1,50 @@
-dist
-.idea
-node_modules
+# =========================
+# Dependencias
+# =========================
+node_modules/
+
+# =========================
+# Variables de entorno
+# =========================
+.env
+.env.local
+.env.*.local
+
+# =========================
+# Build y compilación
+# =========================
+dist/
+build/
+*.tsbuildinfo
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# IDEs y editores
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# =========================
+# Sistema operativo
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Reportes y cobertura
+# =========================
+coverage/
+.nyc_output/
+report/
+*.lcov
