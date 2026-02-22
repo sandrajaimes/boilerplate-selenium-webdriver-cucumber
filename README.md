@@ -1,36 +1,97 @@
-# Selenium WebDriver con Cucumber (Typescript)
-Este repositorio realiza la ejecucion de pruebas de interfaz usando como recurso la pagina web demoblaze. Puede ser de utilidad como recurso de referencia base para la creacion de pruebas con: selenium webdriver y cucumber.
+# Selenium WebDriver con Cucumber (TypeScript)
 
-## Configuración del entorno
-Antes de comenzar a utilizar este boilerplate, es necesario asegurarse de tener configurado el entorno adecuadamente. A continuación, se detallan los pasos necesarios:
-1. **Configurar las variables de entorno:** En el archivo env.Example se encuentra un ejemplo de las variables requeridas.
+Boilerplate para pruebas de interfaz de usuario (UI) usando **Selenium WebDriver**, **Cucumber** y **TypeScript**. Utiliza [SauceDemo](https://www.saucedemo.com/) como aplicación de referencia para automatización.
 
+## Requisitos previos
 
-## Estructura del proyecto
-1. **Carpeta - /src/config:** Contiene los archivos de configuración para la ejecución de Cucumber y la generación de un informe en formato HTML.
-2. **Carpeta - /src/drivers:** Contiene la configuración para los distintos navegadores disponibles.
-3. **Carpeta - /src/features:** Contiene la ejecución y definición de los distintos pasos (steps) que componen las pruebas.
-4. **Carpeta - /src/pages:** Contiene los recursos disponibles para interactuar con cada página. Estos recursos son utilizados en los pasos definidos en Cucumber.
+- Node.js >= 20
+- npm
 
 ## Instalación
-Para la instalacion de las dependencias
 
 ```bash
-  cd boilerplate-selenium-webdriver-cucumber
-  npm install
+git clone <repo-url>
+cd boilerplate-selenium-webdriver-cucumber
+npm install
 ```
 
-## Ejecución de los Tests
-1. **start:test:** Realiza la ejecución de las pruebas, mostrando un informe en la terminal y generando un informe en formato JSON.
+## Configuración
+
+### Variables de entorno
+
+Copia el archivo de ejemplo y configura las variables según tu entorno:
+
 ```bash
-  npm run start:test
+cp .env.Example .env
 ```
 
-2. **start:test:report:** Realiza la ejecución de las pruebas, generando y abriendo un informe con los resultados.
+| Variable | Descripción |
+|----------|-------------|
+| `URL` | URL de la aplicación (ej: https://www.saucedemo.com/) |
+| `USERNAME` | Usuario para el login |
+| `PASSWORD` | Contraseña para el login |
+| `BROWSER_CLOSE_DELAY` | Segundos de espera antes de cerrar el navegador al finalizar (default: 30) |
+| `LOG_LEVEL` | Nivel de logs: `info`, `debug`, etc. |
+| `LOG_DIR` | Directorio para archivos de log (default: `logs`) |
+
+## Estructura del proyecto
+
+```
+├── features/
+│   ├── login.feature          # Escenarios BDD
+│   ├── step-definitions/      # Definición de pasos
+│   └── support/               # Hooks, World, configuración Cucumber
+├── src/
+│   ├── config/
+│   │   └── logger.ts          # Configuración Winston (logs)
+│   ├── driver/
+│   │   └── driver.factory.ts  # Creación de WebDriver (Chrome)
+│   └── pages/
+│       └── login.page.ts      # Page Object del login
+├── cucumber.js                # Configuración Cucumber
+├── .env.Example               # Ejemplo de variables de entorno
+└── package.json
+```
+
+## Scripts disponibles
+
+| Comando | Descripción |
+|---------|-------------|
+| `npm run start:bdd` | Ejecuta las pruebas BDD con Cucumber |
+| `npm run build` | Ejecuta el script principal (tsx) |
+| `npm run lint` | Ejecuta ESLint |
+| `npm run format` | Formatea el código con Prettier |
+
+## Ejecución de pruebas
+
 ```bash
-  npm run start:test:report
+npm run start:bdd
 ```
 
-## Authors
+Las pruebas se ejecutan en Chrome. Al finalizar cada escenario, el navegador permanece abierto durante el tiempo configurado en `BROWSER_CLOSE_DELAY` (por defecto 30 segundos) antes de cerrarse.
+
+### Ejemplo de escenario
+
+```gherkin
+Feature: Login
+
+  Scenario: Login exitoso
+    Given el usuario navega a la página de login
+    When ingresa usuario y contraseña
+    Then debería ver el dashboard
+```
+
+Las credenciales se obtienen de las variables de entorno (`USERNAME`, `PASSWORD`).
+
+## Tecnologías
+
+- **Selenium WebDriver** - Automatización del navegador
+- **Cucumber** - BDD (Behavior Driven Development)
+- **TypeScript** - Tipado estático
+- **Winston** - Logging estructurado
+- **Zod** - Validación de esquemas
+- **Chai** - Aserciones
+
+## Autor
+
 - [@sandrajaimes](https://github.com/sandrajaimes)
-
