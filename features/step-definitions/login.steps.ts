@@ -14,8 +14,8 @@ Given('el usuario navega a la página de login', async function (this: CustomWor
 });
 
 When('ingresa usuario y contraseña', async function (this: CustomWorld) {
-  const username = process.env.USERNAME ?? '';
-  const password = process.env.PASSWORD ?? '';
+  const username = process.env.USERNAME_TEST ?? '';
+  const password = process.env.PASSWORD_TEST ?? '';
   log.info('Step: Ingresando credenciales', { username });
   await this.loginPage.login(username, password);
 });
