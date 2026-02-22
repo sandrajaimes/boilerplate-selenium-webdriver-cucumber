@@ -20,7 +20,7 @@ export class CustomWorld extends World {
 
   async close() {
     if (this.driver) {
-      const delaySeconds = Number(process.env.BROWSER_CLOSE_DELAY) || 30;
+      const delaySeconds = Number(process.env.BROWSER_CLOSE_DELAY ?? 30);
       log.info(`Cerrando sesión de WebDriver en ${delaySeconds} segundos`);
       await new Promise((resolve) => setTimeout(resolve, delaySeconds * 1000));
       await this.driver.quit();
